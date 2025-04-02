@@ -1,5 +1,5 @@
 - name: setup prompt
-  ansible.builtin.shell: set.prompt {{ tool_name }}
+  ansible.builtin.shell: set-prompt {{ tool_name }}
 
 - name: Download repo file
   ansible.builtin.get_url:
