@@ -42,11 +42,11 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {
   to_port = 22
 }
 
-resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4" {
+resource "aws_vpc_security_group_ingress_rule" "allow_vault_port" {
   security_group_id = aws_instance.tool.id
   cidr_ipv4 = "0.0.0.0/0"
   ip_protocol = "tcp"
   from_port = var.port
   to_port = var.port
-  
+
 }
