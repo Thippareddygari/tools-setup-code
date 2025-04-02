@@ -12,7 +12,7 @@ resource "aws_route53_record" "private" {
   zone_id = var.zone_id
   type = "A"
   ttl = 0
-  name = "${var.name}-private"
+  name = "${var.name}-internal"
   records = [aws_instance.tool.private_ip]
 }
 
