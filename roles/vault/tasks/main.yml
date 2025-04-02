@@ -9,5 +9,5 @@
 - name: Install Vault
   ansible.builtin.dnf:
     name: Vault
-    state: present
+    state: installed
 
