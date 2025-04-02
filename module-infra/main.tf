@@ -40,6 +40,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {
   ip_protocol = "tcp"
   from_port = 22
   to_port = 22
+  description = var.name
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_vault_port" {
@@ -48,5 +49,11 @@ resource "aws_vpc_security_group_ingress_rule" "allow_vault_port" {
   ip_protocol = "tcp"
   from_port = var.port
   to_port = var.port
+  description = var.name
+}
 
+resource "aws_vpc_security_group_egress_rule" "egress_allow_all" {
+  security_group_id = aws_security_group.tool.id
+  cidr_ipv4 = "0.0.0.0/0"
+  ip_protocol = "-1"
 }
