@@ -9,9 +9,9 @@ terraform {
 variable "ami_id" {
     default = "ami-09c813fb71547fc4f"
 }
-variable "instance_type" {
-    default = "t3.small"
-}
+# variable "instance_type" {
+#     default = "t3.small"
+# }
 variable "zone_id" {
   default = "Z10310253KPZLFJOC7YEK"
 }
