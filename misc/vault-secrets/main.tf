@@ -13,6 +13,13 @@ provider "vault" {
 
 variable "vault_token" {}
 
+resource "vault_mount" "ssh" {
+    path = "infra"
+    type = "kv"
+    options = {version= "2"}
+    description = "Infra secrets"
+}
+
 resource "vault_generic_secret" "ssh" {
   path="infra/ssh"
 
