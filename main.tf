@@ -19,7 +19,7 @@ variable "zone_id" {
 variable "tools" {
   default = {
     vault ={
-        instance_type = "t3.small"
+        instance_type = "t3.micro"
         port = 8200
     }
 
