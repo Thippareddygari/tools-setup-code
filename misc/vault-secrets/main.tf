@@ -30,3 +30,13 @@ resource "vault_generic_secret" "ssh" {
   }
   EOT
 }
+
+resource "vault_generic_secret" "github_runner" {
+  path = "${vault_mount.ssh.path}/github-runner"
+
+  data_json = <<EOT
+  {
+  
+  }
+  EOT
+}
