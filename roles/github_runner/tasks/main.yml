@@ -25,7 +25,7 @@
 #     name: hvac
 
 - name: Configure github runner
-  //ansible.builtin.shell: ./config.sh --url https://github.com/Thippareddygari --token {{ lookup('community.hashi_vault.hashi_vault', 'secret=infra/data/github-runner:RUNNER_TOKEN token={{ vault_token }} url=http://vault-internal.kommanuthala.store:8200') }} --unattended
+  # ansible.builtin.shell: ./config.sh --url https://github.com/Thippareddygari --token {{ lookup('community.hashi_vault.hashi_vault', 'secret=infra/data/github-runner:RUNNER_TOKEN token={{ vault_token }} url=http://vault-internal.kommanuthala.store:8200') }} --unattended
   ansible.builtin.shell: ./config.sh --url https://github.com/Thippareddygari --token {{ lookup('community.hashi_vault.hashi_vault', 'infra/data/github-runner:RUNNER_TOKEN token={{ vault_token }} url=http://vault-internal.rdevopsb83.online:8200') }}
   args:
     chdir: /actions-runner
