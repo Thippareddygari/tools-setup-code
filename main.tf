@@ -19,14 +19,14 @@ variable "zone_id" {
 variable "tools" {
   default = {
     vault ={
-        instance_type = "t3.micro"
+        instance_type = "t3.small"
         port = 8200
     }
 
-    github-runner = {
-      instance_type= "t3.micro"
-      port= 443
-    }
+    # github-runner = {
+    #   instance_type= "t3.micro"
+    #   port= 443
+    # }
   }
 }
 
