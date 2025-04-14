@@ -20,6 +20,10 @@
     group: github
     remote_src: yes
 
+# - name: Install vault token 
+#   ansible.builtin.pip3.11:
+#     name: hvac
+
 - name: Configure github runner
   ansible.builtin.shell: ./config.cmd --url https://github.com/Thippareddygari --token {{ lookup('community.hashi_vault.hashi_vault', 'secret=infra/data/github-runner:RUNNER_TOKEN token={{ vault_token }}
   args:
